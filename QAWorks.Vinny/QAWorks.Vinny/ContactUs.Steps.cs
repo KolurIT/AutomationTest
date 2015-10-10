@@ -29,6 +29,9 @@ namespace QAWorks.Vinny
             Assert.That(!EmailValidation.Displayed, "Form not submitted due to invalid Email");
             Assert.That(!EmailBoxValidation.Displayed, "Form not submitted due to Email validation");
             Assert.That(!MessageValidation.Displayed, "Form not submitted due to Messsage validation");
+            Assert.That(NameBox.GetAttribute("value") == string.Empty, "Name field should be clear");
+            Assert.That(EmailBox.GetAttribute("value") == string.Empty, "Email field should be clear");
+            Assert.That(MessageBox.GetAttribute("value") == string.Empty, "Message box should be clear");
         }
         
         [When(@"I submit the form with ""(.*)"", ""(.*)"", ""(.*)"" with one of the fields left blank or with an invalid email")]

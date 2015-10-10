@@ -25,6 +25,12 @@ namespace QAWorks.Vinny
             get { return ConfigurationManager.AppSettings["Environment"]; }
         }
 
+        [SetUp]
+        public static void SetUp()
+        {
+            Driver.Manage().Window.Maximize();
+        }
+
         [TearDown]
         public void DriverQuit()
         {
